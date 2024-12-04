@@ -9,17 +9,19 @@ public class TestCalculator {
         Calculator calc = new Calculator();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         do {
-            System.out.println("Введите x и y (либо q для выхода):");
+            System.out.println("Введите знак (либо q для выхода):");
             try {
-                String input_x = reader.readLine();
-                if (input_x.equals("q")) {
+                String sign = reader.readLine();
+                if (sign.equals("q")) {
                     break;
                 }
+                System.out.println("Введите знак x и y:");
+                String input_x = reader.readLine();
                 int x = Integer.parseInt(input_x);
                 String input_y = reader.readLine();
                 int y = Integer.parseInt(input_y);
 
-                calc.SumTwoNumbers(x, y);
+                calc.GetResult(sign, x, y);
             }
             catch (IOException e) {
                 System.out.println("Произошла ошибка ввода/вывода: " + e.getMessage());
